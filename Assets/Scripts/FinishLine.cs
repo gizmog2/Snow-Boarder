@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class FinishLine : MonoBehaviour
     {
         if (player)
         {
-            Debug.Log("Player Finish!");
+            SceneManager.LoadScene(0);
         }
         else
         {
