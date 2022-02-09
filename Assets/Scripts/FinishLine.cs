@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] float reloadTime = 2f;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (player)
         {
-            SceneManager.LoadScene(0);
+            Invoke("ReloadScene", reloadTime);
         }
         else
         {
@@ -19,15 +20,10 @@ public class FinishLine : MonoBehaviour
                
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void ReloadScene()
     {
-        
+        SceneManager.LoadScene(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
