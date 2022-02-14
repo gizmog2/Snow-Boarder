@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float torqueAmount = 1f;
     [SerializeField] float boostSpeed = 30f;
     [SerializeField] float baseSpeed = 20f;
+    
     Rigidbody2D myRigidbody2D;
     SurfaceEffector2D mySurfaceEffector2D;
     // Start is called before the first frame update

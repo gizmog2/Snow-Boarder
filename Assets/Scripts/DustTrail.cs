@@ -5,6 +5,8 @@ using UnityEngine;
 public class DustTrail : MonoBehaviour
 {
     [SerializeField] ParticleSystem trail;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class DustTrail : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             trail.Play();
+            
         }       
     }
 
