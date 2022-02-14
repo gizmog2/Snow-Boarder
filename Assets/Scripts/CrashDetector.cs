@@ -8,6 +8,7 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] float reloadTime = 1f;
     [SerializeField] AudioClip crashSFX;
+    bool isTouching = false;
     
 
     /*private void Start()
@@ -16,11 +17,12 @@ public class CrashDetector : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" && !isTouching)
         {
+            isTouching = true;
             FindObjectOfType<PlayerController>().StopControl();
             crashEffect.Play();
-            GetComponent<AudioSource>().PlayOneShot(crashSFX);
+            GetComponent<AudioSource>().PlayOneShot(crashSFX);            
             Invoke("ReloadScene", reloadTime);
         }
     }
